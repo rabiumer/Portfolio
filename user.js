@@ -1,4 +1,4 @@
-import { supabase } from '../supabase/supabase.js';
+import { supabase } from 'supabase.js';
 
 // --- Utility Functions ---
 
