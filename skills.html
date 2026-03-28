@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Skills</title>
+    <link rel="stylesheet" href="../style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <style>
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 5vh;}
+        .skill-card { display: flex; flex-direction: column; gap: 1.5rem; justify-content: space-between; }
+        .skill-header { display: flex; align-items: center; gap: 1rem; }
+        .skill-icon { width: 60px; height: 60px; border-radius: 1rem; object-fit: contain; padding: 0.5rem; background: rgba(255,255,255,0.1); transition: transform 0.5s; }
+        .skill-card:hover .skill-icon { transform: rotateY(180deg) scale(1.1); box-shadow: var(--glow); }
+        .skill-name { font-size: 1.5rem; font-weight: 700; }
+        .progress-container { width: 100%; background: var(--glass-border); border-radius: 1rem; height: 10px; overflow: hidden; margin-top: 1rem; }
+        .progress-bar { height: 100%; background: linear-gradient(90deg, var(--primary), var(--secondary)); border-radius: 1rem; width: 0%; transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden; }
+        .progress-bar::after { content: ''; position: absolute; top:0; left:0; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent); animation: shimmer 2s infinite; }
+        .skill-percentage { font-weight: 800; color: var(--accent); }
+    </style>
+</head>
+<body>
+    <div class="particles-bg"></div>
+    <header>
+        <div class="container glass-nav" id="main-nav">
+            <a href="index.html" class="logo text-gradient" style="font-size: 1.8rem; font-weight: 800; text-decoration: none; display:flex; align-items:center; gap:0.5rem;"><ion-icon name="color-palette-outline"></ion-icon> PORTFOLIO</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html"><ion-icon name="home-outline"></ion-icon><span>Home</span></a></li>
+                <li><a href="about.html"><ion-icon name="person-outline"></ion-icon><span>About</span></a></li>
+                <li><a href="skills.html" class="active"><ion-icon name="hardware-chip-outline"></ion-icon><span>Skills</span></a></li>
+                <li><a href="graphic-projects.html"><ion-icon name="color-palette-outline"></ion-icon><span>Design</span></a></li>
+                <li><a href="web-projects.html"><ion-icon name="code-slash-outline"></ion-icon><span>Web</span></a></li>
+                <li><a href="contact.html"><ion-icon name="mail-outline"></ion-icon><span>Contact</span></a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme"><ion-icon name="moon-outline" id="theme-icon"></ion-icon></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container animate-fade">
+        <div class="back-btn-container">
+            <a href="#" onclick="history.back(); return false;" class="btn-back"><ion-icon name="arrow-back-outline"></ion-icon> Go Back</a>
+        </div>
+        
+        <h2 style="font-size: var(--font-h1); margin-bottom: 2rem; text-align: center;">Technical <span class="text-gradient">Abilities</span></h2>
+        
+        <div id="skills-grid" class="skills-grid">
+            <!-- Render inserted here -->
+        </div>
+    </main>
+
+    <script type="module" src="user.js"></script>
+</body>
+</html>

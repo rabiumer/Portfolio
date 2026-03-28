@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web & App Development</title>
+    <link rel="stylesheet" href="../style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <style>
+        .web-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 2.5rem; margin-bottom: 5vh; }
+        .web-card { padding: 0; overflow: hidden; display: flex; flex-direction: column; border-top: 1px solid rgba(255,255,255,0.2); border-left: 1px solid rgba(255,255,255,0.2); }
+        .web-screenshot { width: 100%; height: 220px; object-fit: cover; border-bottom: 1px solid var(--glass-border); }
+        .web-content { padding: 2rem; display: flex; flex-direction: column; gap: 1rem; flex-grow: 1; }
+        .web-category { color: var(--secondary); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;}
+        .web-desc { color: var(--text-muted); font-size: 0.95rem; }
+    </style>
+</head>
+<body>
+    <div class="particles-bg"></div>
+    <header>
+        <div class="container glass-nav" id="main-nav">
+            <a href="index.html" class="logo text-gradient" style="font-size: 1.8rem; font-weight: 800; text-decoration: none; display:flex; align-items:center; gap:0.5rem;"><ion-icon name="color-palette-outline"></ion-icon> PORTFOLIO</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html"><ion-icon name="home-outline"></ion-icon><span>Home</span></a></li>
+                <li><a href="about.html"><ion-icon name="person-outline"></ion-icon><span>About</span></a></li>
+                <li><a href="skills.html"><ion-icon name="hardware-chip-outline"></ion-icon><span>Skills</span></a></li>
+                <li><a href="graphic-projects.html"><ion-icon name="color-palette-outline"></ion-icon><span>Design</span></a></li>
+                <li><a href="web-projects.html" class="active"><ion-icon name="code-slash-outline"></ion-icon><span>Web</span></a></li>
+                <li><a href="contact.html"><ion-icon name="mail-outline"></ion-icon><span>Contact</span></a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme"><ion-icon name="moon-outline" id="theme-icon"></ion-icon></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container animate-fade">
+        <div class="back-btn-container">
+            <a href="#" onclick="history.back(); return false;" class="btn-back"><ion-icon name="arrow-back-outline"></ion-icon> Go Back</a>
+        </div>
+
+        <h2 style="font-size: var(--font-h1); margin-bottom: 2rem; text-align: center;">Web & App <span class="text-gradient">Innovations</span></h2>
+        
+        <div id="web-grid" class="web-grid">
+            <!-- Rendered cards -->
+        </div>
+    </main>
+
+    <script type="module" src="user.js"></script>
+</body>
+</html>

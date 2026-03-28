@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="../style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <style>
+        .contact-layout { display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; align-items: start; margin-bottom: 5vh; }
+        .contact-info-card { display: flex; flex-direction: column; gap: 2rem; }
+        .info-item { display: flex; align-items: center; gap: 1.5rem; }
+        .info-icon { width: 50px; height: 50px; border-radius: 50%; background: var(--surface); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--primary); border: 1px solid var(--glass-border); transition: var(--transition); }
+        .info-item:hover .info-icon { background: var(--primary); color: #fff; box-shadow: var(--glow); transform: scale(1.1); }
+        .info-text h4 { font-size: 1.2rem; margin-bottom: 0.2rem; }
+        .info-text p, .info-text a { color: var(--text-muted); text-decoration: none; transition: var(--transition); }
+        .info-text a:hover { color: var(--secondary); }
+        .form-floating { position: relative; margin-bottom: 2rem; }
+        .form-floating input, .form-floating textarea { width: 100%; padding: 1.2rem 1rem; background: var(--surface); border: 1px solid var(--glass-border); border-radius: 0.75rem; color: var(--text); font-family: inherit; font-size: 1rem; outline: none; transition: var(--transition); }
+        .form-floating label { position: absolute; left: 1rem; top: 1.2rem; color: var(--text-muted); transition: var(--transition); pointer-events: none; }
+        .form-floating input:focus, .form-floating textarea:focus, .form-floating input:not(:placeholder-shown), .form-floating textarea:not(:placeholder-shown) { border-color: var(--primary); box-shadow: var(--glow); }
+        .form-floating input:focus ~ label, .form-floating textarea:focus ~ label, .form-floating input:not(:placeholder-shown) ~ label, .form-floating textarea:not(:placeholder-shown) ~ label { top: -0.6rem; left: 0.8rem; font-size: 0.8rem; background: var(--background); padding: 0 0.4rem; color: var(--primary); border-radius: 0.2rem; }
+    </style>
+</head>
+<body>
+    <div class="particles-bg"></div>
+    <header>
+        <div class="container glass-nav" id="main-nav">
+            <a href="index.html" class="logo text-gradient" style="font-size: 1.8rem; font-weight: 800; text-decoration: none; display:flex; align-items:center; gap:0.5rem;"><ion-icon name="color-palette-outline"></ion-icon> PORTFOLIO</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html"><ion-icon name="home-outline"></ion-icon><span>Home</span></a></li>
+                <li><a href="about.html"><ion-icon name="person-outline"></ion-icon><span>About</span></a></li>
+                <li><a href="skills.html"><ion-icon name="hardware-chip-outline"></ion-icon><span>Skills</span></a></li>
+                <li><a href="graphic-projects.html"><ion-icon name="color-palette-outline"></ion-icon><span>Design</span></a></li>
+                <li><a href="web-projects.html"><ion-icon name="code-slash-outline"></ion-icon><span>Web</span></a></li>
+                <li><a href="contact.html" class="active"><ion-icon name="mail-outline"></ion-icon><span>Contact</span></a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme"><ion-icon name="moon-outline" id="theme-icon"></ion-icon></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container animate-fade">
+        <div class="back-btn-container">
+            <a href="#" onclick="history.back(); return false;" class="btn-back"><ion-icon name="arrow-back-outline"></ion-icon> Go Back</a>
+        </div>
+
+        <h2 style="font-size: var(--font-h1); margin-bottom: 2rem; text-align: center;">Let's Work <span class="text-gradient">Together</span></h2>
+        
+        <div class="contact-layout">
+            <div class="contact-info-card glass-card">
+                <h3 style="margin-bottom: 1rem;">Contact Info</h3>
+                <div class="info-item">
+                    <div class="info-icon"><ion-icon name="mail-outline"></ion-icon></div>
+                    <div class="info-text">
+                        <h4>Email</h4>
+                        <a id="contact-email" href="#">Loading...</a>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon"><ion-icon name="logo-whatsapp"></ion-icon></div>
+                    <div class="info-text">
+                        <h4>WhatsApp</h4>
+                        <a id="contact-whatsapp" href="#">Loading...</a>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon"><ion-icon name="location-outline"></ion-icon></div>
+                    <div class="info-text">
+                        <h4>Location</h4>
+                        <p>Available Worldwide</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card">
+                <form id="contact-form">
+                    <div class="form-floating">
+                        <input type="text" id="name" required placeholder=" ">
+                        <label for="name">Your Name</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="email" id="email" required placeholder=" ">
+                        <label for="email">Your Email</label>
+                    </div>
+                    <div class="form-floating">
+                        <textarea id="message" rows="5" required placeholder=" "></textarea>
+                        <label for="message">Your Message</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                        <ion-icon name="send-outline"></ion-icon> Send Message
+                    </button>
+                    <p id="form-status" style="margin-top: 1rem; text-align: center; font-weight: 600;"></p>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="user.js"></script>
+</body>
+</html>

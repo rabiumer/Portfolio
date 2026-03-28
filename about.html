@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="../style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <style>
+        .about-layout { display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; align-items: start; }
+        .about-image { width: 100%; border-radius: 2rem; border: 1px solid var(--glass-border); box-shadow: var(--shadow); object-fit: cover;}
+        
+        .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem; }
+        .stat-card { text-align: center; padding: 2rem 1rem; border-top: 3px solid var(--primary); }
+        .stat-number { font-size: 3rem; font-weight: 800; color: var(--text); }
+        .stat-label { color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;}
+    </style>
+</head>
+<body>
+    <div class="particles-bg"></div>
+    <header>
+        <div class="container glass-nav" id="main-nav">
+            <a href="index.html" class="logo text-gradient" style="font-size: 1.8rem; font-weight: 800; text-decoration: none; display:flex; align-items:center; gap:0.5rem;"><ion-icon name="color-palette-outline"></ion-icon> PORTFOLIO</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html"><ion-icon name="home-outline"></ion-icon><span>Home</span></a></li>
+                <li><a href="about.html" class="active"><ion-icon name="person-outline"></ion-icon><span>About</span></a></li>
+                <li><a href="skills.html"><ion-icon name="hardware-chip-outline"></ion-icon><span>Skills</span></a></li>
+                <li><a href="graphic-projects.html"><ion-icon name="color-palette-outline"></ion-icon><span>Design</span></a></li>
+                <li><a href="web-projects.html"><ion-icon name="code-slash-outline"></ion-icon><span>Web</span></a></li>
+                <li><a href="contact.html"><ion-icon name="mail-outline"></ion-icon><span>Contact</span></a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme"><ion-icon name="moon-outline" id="theme-icon"></ion-icon></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container animate-fade">
+        <div class="back-btn-container">
+            <a href="#" onclick="history.back(); return false;" class="btn-back"><ion-icon name="arrow-back-outline"></ion-icon> Go Back</a>
+        </div>
+
+        <div class="about-layout">
+            <div class="animate-float" style="animation-delay: 0.5s;">
+                <img id="about-img" src="../default.png" alt="Profile" class="about-image glass-card" style="padding: 1rem;">
+            </div>
+            
+            <div>
+                <h2 style="font-size: var(--font-h1); margin-bottom: 1.5rem;">About <span class="text-gradient">Me</span></h2>
+                <div class="glass-card" style="margin-bottom: 2rem;">
+                    <h3 id="about-name" style="font-size: 2rem; color: var(--text); display:flex; align-items:center; gap:0.5rem;"><ion-icon name="person-circle-outline"></ion-icon> Name Loading...</h3>
+                    <p id="about-description" style="color: var(--text-muted); margin-top: 1rem; font-size:1.1rem; line-height: 1.8;">
+                        Your biography description goes here.
+                    </p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="glass-card stat-card">
+                        <ion-icon name="time-outline" style="font-size: 2rem; color: var(--primary);"></ion-icon>
+                        <div class="stat-number" id="about-experience">0</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="glass-card stat-card" style="border-top-color: var(--secondary);">
+                        <ion-icon name="happy-outline" style="font-size: 2rem; color: var(--secondary);"></ion-icon>
+                        <div class="stat-number" id="about-clients">0</div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                    <div class="glass-card stat-card" style="border-top-color: var(--accent);">
+                        <ion-icon name="desktop-outline" style="font-size: 2rem; color: var(--accent);"></ion-icon>
+                        <div class="stat-number" id="about-projects">50+</div>
+                        <div class="stat-label">Projects Done</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="user.js"></script>
+</body>
+</html>

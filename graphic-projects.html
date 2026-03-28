@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphic Design Projects</title>
+    <link rel="stylesheet" href="../style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <style>
+        .masonry-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 5vh; }
+        .project-card { position: relative; overflow: hidden; border-radius: 1.5rem; box-shadow: var(--shadow); cursor: pointer; border: 1px solid var(--glass-border); }
+        .project-card img { width: 100%; height: 350px; object-fit: cover; transition: transform 0.6s ease; }
+        .project-card:hover img { transform: scale(1.1); }
+        .project-overlay { position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(11, 15, 26, 0.9) 0%, rgba(11, 15, 26, 0) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem; opacity: 0; transition: opacity 0.4s ease; }
+        .project-card:hover .project-overlay { opacity: 1; }
+        .project-overlay h3 { font-size: 1.5rem; color: #fff; margin-bottom: 0.5rem; transform: translateY(20px); transition: 0.4s ease; }
+        .project-overlay span { color: var(--secondary); font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; transform: translateY(20px); transition: 0.4s ease 0.1s; }
+        .project-card:hover .project-overlay h3, .project-card:hover .project-overlay span { transform: translateY(0); }
+
+        /* Lightbox */
+        .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.95); z-index: 2000; justify-content: center; align-items: center; }
+        .lightbox img { max-width: 90%; max-height: 90%; border-radius: 1rem; box-shadow: var(--glow); border: 2px solid var(--primary); }
+        .lightbox-close { position: absolute; top: 2rem; right: 2rem; color: #fff; font-size: 3rem; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="particles-bg"></div>
+    <header>
+        <div class="container glass-nav" id="main-nav">
+            <a href="index.html" class="logo text-gradient" style="font-size: 1.8rem; font-weight: 800; text-decoration: none; display:flex; align-items:center; gap:0.5rem;"><ion-icon name="color-palette-outline"></ion-icon> PORTFOLIO</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html"><ion-icon name="home-outline"></ion-icon><span>Home</span></a></li>
+                <li><a href="about.html"><ion-icon name="person-outline"></ion-icon><span>About</span></a></li>
+                <li><a href="skills.html"><ion-icon name="hardware-chip-outline"></ion-icon><span>Skills</span></a></li>
+                <li><a href="graphic-projects.html" class="active"><ion-icon name="color-palette-outline"></ion-icon><span>Design</span></a></li>
+                <li><a href="web-projects.html"><ion-icon name="code-slash-outline"></ion-icon><span>Web</span></a></li>
+                <li><a href="contact.html"><ion-icon name="mail-outline"></ion-icon><span>Contact</span></a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme"><ion-icon name="moon-outline" id="theme-icon"></ion-icon></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container animate-fade">
+        <div class="back-btn-container">
+            <a href="#" onclick="history.back(); return false;" class="btn-back"><ion-icon name="arrow-back-outline"></ion-icon> Go Back</a>
+        </div>
+        
+        <h2 style="font-size: var(--font-h1); margin-bottom: 2rem; text-align: center;">Graphic <span class="text-gradient">Masterpieces</span></h2>
+        
+        <div id="graphic-grid" class="masonry-grid">
+            <!-- Grid inserted here -->
+        </div>
+    </main>
+
+    <div id="lightbox" class="lightbox">
+        <ion-icon name="close-outline" class="lightbox-close" id="lightbox-close"></ion-icon>
+        <img id="lightbox-img" src="" alt="Full Image">
+    </div>
+
+    <script type="module" src="user.js"></script>
+</body>
+</html>
