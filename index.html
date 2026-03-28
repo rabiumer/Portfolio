@@ -4,25 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Graphic Designer & Web Developer</title>
-
-    <!-- Google Font -->
     <link rel="stylesheet" href="style.css">
-
-    <!-- Ionicons -->
+    <link rel="icon" href="favicon.png" type="image/png">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <style>
+        .hero { display: grid; grid-template-columns: 1fr 1fr; align-items: center; min-height: 100vh; padding-top: 80px; gap: 4rem; }
+        .hero-text h1 { line-height: 1.1; margin-bottom: 1.5rem; }
+        .hero-text p { color: var(--text-muted); margin-bottom: 2rem; max-width: 500px; }
+        .typing-text::after { content: '|'; animation: blink 1s infinite; }
+        @keyframes blink { 50% { opacity: 0; } }
+        
+        .hero-image-wrapper { position: relative; width: 100%; max-width: 450px; margin: 0 auto; }
+        .hero-image { width: 100%; aspect-ratio: 1/1; border-radius: 2rem; object-fit: cover; border: 2px solid var(--primary); box-shadow: var(--shadow), var(--glow); }
+        .shape { position: absolute; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 50%; filter: blur(40px); opacity: 0.5; z-index: -1; }
+        .shape-1 { top: -20px; right: -20px; width: 200px; height: 200px; }
+        .shape-2 { bottom: -20px; left: -20px; width: 300px; height: 300px; opacity: 0.3; }
+    </style>
 </head>
 <body>
-    <!-- Particles Background -->
     <div class="particles-bg"></div>
-
-    <!-- Header -->
     <header>
-        <div class="container glass-nav">
-            <a href="index.html" class="logo text-gradient">
-                <ion-icon name="color-palette-outline"></ion-icon> PORTFOLIO
-            </a>
-
-            <ul class="nav-links">
+        <div class="container glass-nav" id="main-nav">
+            <a href="index.html" class="logo text-gradient" style="font-size: 1.8rem; font-weight: 800; text-decoration: none; display:flex; align-items:center; gap:0.5rem;"><ion-icon name="color-palette-outline"></ion-icon> PORTFOLIO</a>
+            
+            <ul class="nav-links" id="nav-links">
                 <li><a href="index.html" class="active"><ion-icon name="home-outline"></ion-icon><span>Home</span></a></li>
                 <li><a href="about.html"><ion-icon name="person-outline"></ion-icon><span>About</span></a></li>
                 <li><a href="skills.html"><ion-icon name="hardware-chip-outline"></ion-icon><span>Skills</span></a></li>
@@ -32,44 +37,30 @@
             </ul>
 
             <div class="nav-actions">
-                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
-                    <ion-icon name="moon-outline" id="theme-icon"></ion-icon>
-                </button>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme"><ion-icon name="moon-outline" id="theme-icon"></ion-icon></button>
             </div>
         </div>
     </header>
 
-    <!-- Main Section -->
     <main class="container">
-        <section class="hero">
-            <!-- Hero Text -->
+        <section class="hero animate-fade">
             <div class="hero-text">
-                <h1>Hello, I am a <br>
-                    <span class="text-gradient">Graphic Designer</span> & <br>
-                    <span class="text-accent">Web Developer</span>
-                </h1>
-                <p>I create modern, responsive designs and web applications to help brands shine online.</p>
-
-                <div class="hero-btns">
-                    <a href="graphic-projects.html" class="btn btn-primary">
-                        <ion-icon name="briefcase-outline"></ion-icon> View Work
-                    </a>
-                    <a href="contact.html" class="btn btn-secondary">
-                        <ion-icon name="chatbubbles-outline"></ion-icon> Hire Me
-                    </a>
+                <h1>Hello, I am a <br><span class="text-gradient">Graphic Designer</span> & <br><span class="text-accent">Web Developer</span></h1>
+                <p id="hero-description" class="typing-text">Creative Visual Designer With Modern Thinking...</p>
+                <div class="hero-btns" style="display:flex; gap:1rem;">
+                    <a href="graphic-projects.html" class="btn btn-primary"><ion-icon name="briefcase-outline"></ion-icon> View Work</a>
+                    <a href="contact.html" class="btn btn-secondary"><ion-icon name="chatbubbles-outline"></ion-icon> Hire Me</a>
                 </div>
             </div>
-
-            <!-- Hero Image -->
-            <div class="hero-image-wrapper">
+            
+            <div class="hero-image-wrapper animate-float">
                 <div class="shape shape-1"></div>
                 <div class="shape shape-2"></div>
-                <img id="profile-img" src="default.png" alt="Profile" class="hero-image glass-card">
+                <img id="profile-img" src="../default.png" alt="Profile" class="hero-image glass-card" style="padding: 0.5rem;">
             </div>
         </section>
     </main>
 
-    <!-- Scripts -->
     <script type="module" src="user.js"></script>
 </body>
 </html>
